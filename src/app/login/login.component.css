@@ -1,0 +1,118 @@
+/* Corpo e html a piena altezza e larghezza */
+:host{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Wrapper login centrato */
+.login-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.login-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Box interno login */
+.login-box {
+  width: 100%;
+  color: #fff;
+}
+
+/* Titolo */
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Input */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+/* Pulsante submit */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #2563eb;
+  box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
+}
+
+button[type="submit"]:disabled {
+  background-color: #7ca9f9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Link "Torna indietro" */
+.back-link {
+  margin-top: 1.5rem;
+  color: #bbe1ff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-align: center;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #e0e7ff;
+}

@@ -1,0 +1,61 @@
+<div class="calendar-wrapper" (click)="onBackgroundClick()">
+
+  <div class="calendar-header">
+    <button (click)="previousMonth(); $event.stopPropagation()">‹</button>
+    <span>{{ currentYear }} - {{ currentMonth + 1 }}</span>
+    <button (click)="nextMonth(); $event.stopPropagation()">›</button>
+  </div>
+
+  <div class="weekdays">
+    <div *ngFor="let d of ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab']">{{ d }}</div>
+  </div>
+
+  <div class="calendar-grid">
+    <div *ngFor="let _ of [].constructor(firstDayOfMonth)" class="empty"></div>
+
+    <div *ngFor="let day of daysInMonth"
+         (click)="selectDay(day, $event)"
+         [class.selected]="selectedDate === getDateString(day)"
+         class="calendar-cell">
+
+      <div class="day-number">{{ day }}</div>
+
+      <div class="events-container">
+        <div *ngFor="let ev of getEventsForDay(day); let i = index"
+             class="event"
+             [style.background-color]="ev.color"
+             (click)="openEditPopup(day, i, $event)">
+          {{ ev.time }} • {{ ev.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aggiungi evento -->
+  <div *ngIf="showPopup" class="popup-overlay" (click)="onBackgroundClick()">
+    <div class="popup" (click)="$event.stopPropagation()">
+      <h4>Aggiungi evento per {{ selectedDate }}</h4>
+      <input type="text" [(ngModel)]="newEventTitle" placeholder="Nome evento" />
+      <input type="time" [(ngModel)]="newEventTime" />
+      <input type="color" [(ngModel)]="newEventColor" />
+      <button (click)="addEvent()">Salva</button>
+    </div>
+  </div>
+
+  <!-- Modifica evento -->
+  <div *ngIf="showEditPopup" class="popup-overlay" (click)="closeEditPopup()">
+    <div class="popup" (click)="$event.stopPropagation()">
+      <h4>Modifica evento</h4>
+      <input type="text" [(ngModel)]="editEventTitle" />
+      <input type="time" [(ngModel)]="editEventTime" />
+      <input type="color" [(ngModel)]="editEventColor" />
+
+      <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+        <button (click)="saveEditedEvent()">Salva</button>
+        <button (click)="deleteEvent()">Rimuovi</button>
+        <button (click)="deleteAllEvents()">Rimuovi tutti</button>
+      </div>
+    </div>
+  </div>
+
+</div>

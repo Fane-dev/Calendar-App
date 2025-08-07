@@ -1,0 +1,31 @@
+<div class="login-wrapper">
+  <div class="login-box">
+    <h2>Accedi</h2>
+
+    <form #loginForm="ngForm" (ngSubmit)="loginWithEmail()">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        minlength="6"
+      />
+
+      <button type="submit" [disabled]="loginForm.invalid">Accedi con Email</button>
+    </form>
+  </div>
+
+  <a [routerLink]="['/']" class="back-link">← Torna indietro</a>
+</div>

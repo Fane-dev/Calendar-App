@@ -1,0 +1,17 @@
+<div class="home-container">
+
+  <div class="hero-box">
+    <h1>📅 Il Tuo Calendario Personale</h1>
+    <p>Organizza i tuoi eventi, salva le tue attività, e accedi ovunque tu sia.</p>
+
+    <div class="button-group">
+      @if (!isLogged) {
+        <button routerLink="/login" class="btn">Login</button>
+        <button routerLink="/register" class="btn secondary">Registrati</button>
+      } @else {
+        <button (click)="logout()" class="btn danger">Logout</button>
+      }
+    </div>
+  </div>
+
+</div>
