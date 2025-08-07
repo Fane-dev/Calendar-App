@@ -1,59 +1,54 @@
-# DashboardSite
+📅 Calendar App con Login Firebase
+Questa è un'applicazione calendario realizzata in Angular che permette agli utenti di:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Effettuare il login con email e password tramite Firebase Authentication
 
-## Development server
+Visualizzare, aggiungere, modificare ed eliminare eventi personali
 
-To start a local development server, run:
+Salvare gli eventi in LocalStorage, separatamente per ogni utente
 
-```bash
+Visualizzare eventi nel calendario solo dopo il login
+
+🚀 Come iniziare
+1. Clonare il progetto
+
+2. Installare le dipendenze
+npm install
+
+3. Avviare il server di sviluppo
 ng serve
-```
+Apri il browser e vai su http://localhost:4200/ per vedere l'app in esecuzione.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🔐 Configurazione Firebase
+vai su firebase console e crea un progetto
+successivamente vai sulla sezione authentication e crealo
+vai su metodi di accesso e aggiungi un nuovo provider(in questo caso email)
+finito tutto, spostati sulle impostazioni del progetto, scorri fino a trovare la sezione "le tue app"
+clicca web, dai un nome e registra l'app
+da qui appariranno le tue credenziali che andranno a sostituire quelle specificate qua sotto
 
-## Code scaffolding
+Per abilitare il login, configura Firebase nel file src/environments/environment.ts con le tue credenziali:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+nel file environment modifica con le credenziali el tuo progetto firebase
+export const environment = {
+  firebase: {
+    apiKey: 'LA_TUA_API_KEY',
+    authDomain: 'TUO_DOMINIO.firebaseapp.com',
+    projectId: 'TUO_PROJECT_ID',
+    storageBucket: 'TUO_BUCKET',
+    messagingSenderId: 'TUO_SENDER_ID',
+    appId: 'TUO_APP_ID',
+  }
+};
+🧩 Funzionalità principali
+🔑 Login utente con email e password tramite Firebase
 
-```bash
-ng generate component component-name
-```
+📅 Calendario mensile dinamico
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🎨 Eventi colorati con orari personalizzati
 
-```bash
-ng generate --help
-```
+💾 Eventi salvati in LocalStorage, distinti per ogni utente
 
-## Building
+✍️ Modifica e cancellazione eventi singoli o multipli
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+⬅️➡️ Navigazione tra i mesi
