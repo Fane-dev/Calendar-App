@@ -24,7 +24,7 @@ export class LoginComponent {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then(userCredential => {
         this.authService.setIsLogged(true);
-        this.authService.setUserEmail(userCredential.user?.email || null); // 👈 salva l'email
+        this.authService.setUserEmail(userCredential.user?.email || null);
         console.log('Login completato, isLogged:', this.authService.getIsLogged());
         this.router.navigate(['/calendar']);
         alert(`Benvenuto ${userCredential.user?.email}`);
