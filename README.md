@@ -14,8 +14,9 @@ Visualizzare eventi nel calendario solo dopo il login
 
 2. Installare le dipendenze
 npm install
+npm install firebase @angular/fire
 
-3. Avviare il server di sviluppo
+4. Avviare il server di sviluppo
 ng serve
 Apri il browser e vai su http://localhost:4200/ per vedere l'app in esecuzione.
 
