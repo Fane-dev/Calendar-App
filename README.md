@@ -30,7 +30,7 @@ da qui appariranno le tue credenziali che andranno a sostituire quelle specifica
 Per abilitare il login, configura Firebase nel file src/environments/environment.ts con le tue credenziali:
 
 nel file environment modifica con le credenziali el tuo progetto firebase
-export const environment = {
+`export const environment = {
   firebase: {
     apiKey: 'LA_TUA_API_KEY',
     authDomain: 'TUO_DOMINIO.firebaseapp.com',
@@ -39,7 +39,7 @@ export const environment = {
     messagingSenderId: 'TUO_SENDER_ID',
     appId: 'TUO_APP_ID',
   }
-};
+};`
 🧩 Funzionalità principali
 🔑 Login utente con email e password tramite Firebase
 
