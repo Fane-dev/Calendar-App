@@ -1,55 +1,60 @@
-📅 Calendar App con Login Firebase
-Questa è un'applicazione calendario realizzata in Angular che permette agli utenti di:
+# 📅 Calendar App with Firebase Login
 
-Effettuare il login con email e password tramite Firebase Authentication
+A calendar application built with **Angular** that allows users to manage personal events, with authentication handled by **Firebase**. Each user's data is stored separately using **LocalStorage**.
 
-Visualizzare, aggiungere, modificare ed eliminare eventi personali
+---
 
-Salvare gli eventi in LocalStorage, separatamente per ogni utente
+## 🔐 Key Features
 
-Visualizzare eventi nel calendario solo dopo il login
+- 🔑 User login with email and password via Firebase Authentication  
+- 📅 Dynamic monthly calendar view  
+- 🎨 Colored events with custom time slots  
+- 💾 Events stored in LocalStorage, separated per user  
+- ✍️ Create, edit, and delete single or multiple events  
+- ⬅️➡️ Navigate between months  
 
-🚀 Come iniziare
-1. Clonare il progetto
+---
 
-2. Installare le dipendenze
-npm install
-npm install firebase @angular/fire
+## 🚀 How to Get Started  
 
-4. Avviare il server di sviluppo
-ng serve
-Apri il browser e vai su http://localhost:4200/ per vedere l'app in esecuzione.
+### 1. Clone the repository  
 
-🔐 Configurazione Firebase
-vai su firebase console e crea un progetto
-successivamente vai sulla sezione authentication e crealo
-vai su metodi di accesso e aggiungi un nuovo provider(in questo caso email)
-finito tutto, spostati sulle impostazioni del progetto, scorri fino a trovare la sezione "le tue app"
-clicca web, dai un nome e registra l'app
-da qui appariranno le tue credenziali che andranno a sostituire quelle specificate qua sotto
+git clone https://github.com/your-username/calendar-app.git  
+cd calendar-app  
 
-Per abilitare il login, configura Firebase nel file src/environments/environment.ts con le tue credenziali:
+# 2. Install dependencies
+npm install  
+npm install firebase @angular/fire  
 
-nel file environment modifica con le credenziali el tuo progetto firebase
-`export const environment = {
-  firebase: {
-    apiKey: 'LA_TUA_API_KEY',
-    authDomain: 'TUO_DOMINIO.firebaseapp.com',
-    projectId: 'TUO_PROJECT_ID',
-    storageBucket: 'TUO_BUCKET',
-    messagingSenderId: 'TUO_SENDER_ID',
-    appId: 'TUO_APP_ID',
-  }
-};`
-🧩 Funzionalità principali
-🔑 Login utente con email e password tramite Firebase
+# 3. Configure Firebase
+Go to Firebase Console and create a new project  
 
-📅 Calendario mensile dinamico
+Navigate to Authentication > Sign-in method and enable Email/Password  
 
-🎨 Eventi colorati con orari personalizzati
+Go to Project settings > Your apps, click on </> Web, name your app and register it  
 
-💾 Eventi salvati in LocalStorage, distinti per ogni utente
+Copy the Firebase credentials and paste them into your src/environments/environment.ts file:  
 
-✍️ Modifica e cancellazione eventi singoli o multipli
+<pre><code>ts export const environment = { 
+  firebase: { 
+    apiKey: 'YOUR_API_KEY', 
+    authDomain: 'YOUR_DOMAIN.firebaseapp.com', 
+    projectId: 'YOUR_PROJECT_ID', storageBucket: 'YOUR_BUCKET', 
+    messagingSenderId: 'YOUR_SENDER_ID', 
+    appId: 'YOUR_APP_ID'
+    } 
+  }; </code></pre>
 
-⬅️➡️ Navigazione tra i mesi
+# 4. Run the development server
+ng serve  
+
+Then open your browser and navigate to localhost
+
+# 💡 Tech Stack
+-Angular  
+
+-Firebase (Authentication)  
+
+-LocalStorage (per-user data)  
+
+-TypeScript / HTML / CSS  
