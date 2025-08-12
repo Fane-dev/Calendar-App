@@ -19,7 +19,7 @@ A calendar application built with **Angular** that allows users to manage person
 
 ### 1. Clone the repository  
 
-git clone https://github.com/your-username/calendar-app.git  
+git clone https://github.com/Fane-dev/Calendar-App  
 cd calendar-app  
 
 # 2. Install dependencies
